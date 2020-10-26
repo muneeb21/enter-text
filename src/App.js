@@ -11,13 +11,12 @@ class App extends React.Component {
     this.state = 
     { firstBox: "",
       secondBox:"",
-      text:"",
       keyOne:"",
       keyTwo:""
     }
   }
 
-  // handler for form data
+  // handler for text data
 
   textHandler=(e)=>{
     e.preventDefault();
@@ -34,31 +33,31 @@ class App extends React.Component {
     let secondBox="";
     let testString=text;
     
-
-    
     firstBox=getText(keyOneIndex,keyTwoIndex,keyOne,keyTwo,testString);
     secondBox=getText(keyTwoIndex,keyOneIndex,keyTwo,keyOne,testString);
     console.log("firstBox",firstBox);
     console.log("secondBox",secondBox);
   
-  this.setState({firstBox:firstBox,secondBox:secondBox}); 
-    // FUunction to calculate secind box
+    // update the state
+     this.setState({firstBox:firstBox,secondBox:secondBox}); 
+   
     
 
     
   }
-
+  
+  // handler for key1
   keyOneHandler=(e)=>{
-    // e.preventDefault();
+    
     const keyOne=e.target.value;
-    // console.log(text," key1");
+  //  update the state
     this.setState({keyOne: keyOne});
   }
-
+//  handler for key2
   keyTwoHandler=(e)=>{
-    // e.preventDefault();
+    //  update the state
     const keyTwo=e.target.value;
-    // console.log(text," key2");
+   
     this.setState({keyTwo: keyTwo});
   }
 
@@ -100,7 +99,7 @@ class App extends React.Component {
   );
 }
 }
-
+// styles for app
 const styles={
   heading:{
   marginLeft:10
@@ -109,7 +108,7 @@ const styles={
       margin:3,
       height: 120,
       width: 320,
-      // border:"solid 1px black",
+      
       backgroundColor: "white",
      
   },
