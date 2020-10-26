@@ -20,7 +20,7 @@ class App extends React.Component {
 
   textHandler=(e)=>{
     e.preventDefault();
-    const text=e.target.text.value;
+    const text=e.target.value;
     // console.log(text," text");
     let keyOne=this.state.keyOne;
     let keyTwo=this.state.keyTwo;
@@ -68,7 +68,7 @@ class App extends React.Component {
     <div className="App">
       <h1 style={styles.heading}>WELCOME!</h1>
       <div classnname="form">
-        <form onSubmit={this.textHandler}>
+        <form >
            <div style={styles.key1div}>
              Key1
               <input style={styles.input} type="text" name="key1"onChange={this.keyOneHandler} placeholder="Enter Key1.."/>
@@ -80,12 +80,10 @@ class App extends React.Component {
            <div>
             Enter The Text
             <div>
-             <textarea style={styles.textarea} rows="4" cols="50" placeholder="Enter Text...." name="text"></textarea>
+             <textarea onChange={this.textHandler} style={styles.textarea} rows="4" cols="50" placeholder="Enter Text...." name="text"></textarea>
              </div>
            </div>
-           <div>
-             <input style={styles.submitButton} type="submit"/>
-           </div>
+           
           </form> 
           
       </div>
